@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Prevents elements from overflowing */
+    min-height: 100vh;
+    background: url('assests/images/background-desktop.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Background SVG Elements */
+.background-svg {
+    position: absolute;
+    z-index: -1; /* Keep them behind content */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Positioning Each SVG */
+.circle {
+    top: 10px;
+    left: 10px;
+    width: 100px;
+}
+
+.lines {
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+}
+
+.squiggly-top {
+    right:0;
+    width:25%
+}
+
+.squiggly-bottom-desktop {
+    bottom: 0;
+    width: 50%;
+    left: 0;
+}
+
+/* Main Content Container */
+.container {
+    max-width: 400px;
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+/* Input & Button Styles */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: transparent; /* Make input transparent */
+}
+button {
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkblue;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+/* Hide Elements */
+.hidden {
+    display: none;
+}
