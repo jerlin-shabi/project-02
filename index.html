@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Background SVGs -->
+    <img src="assests\images\logo-full.svg" class="logo-full">
     <img src="assests\images\pattern-circle.svg" class="background-svg circle">
     <img src="assests\images\pattern-lines.svg" class="background-svg lines">
     <img src="assests\images\pattern-squiggly-line-top.svg" class="background-svg squiggly-top">
@@ -22,7 +25,13 @@
         <section id="registration-section">
             <form id="registration-form">
                 <label id="avater" for="avatar">Upload Avatar</label>
-                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                <div class="file-upload">
+                    <label for="avatar" class="file-upload-label">
+                        <img src="assests/images/icon-upload.svg" alt="Upload Icon" class="upload-icon">
+                        <span>Drag & drop your avatar here, or click to select a file</span>
+                    </label>
+                    <input type="file" id="avatar" name="avatar" class="file-upload-input">
+                </div>
                 <span class="error-message"></span>
 
                 <label for="name">Full Name</label>
@@ -55,4 +64,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
