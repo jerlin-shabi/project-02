@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    color: hsl(252, 6%, 83%);
     padding: 20px;
     position: relative;
     overflow: hidden; /* Prevents elements from overflowing */
@@ -30,8 +31,8 @@ body {
 }
 
 .squiggly-top {
-    right:0;
-    width:25%
+    right: 0;
+    width: 25%;
 }
 
 .squiggly-bottom-desktop {
@@ -42,40 +43,94 @@ body {
 
 /* Main Content Container */
 .container {
-    max-width: 400px;
+    max-width: 450px;  /* Increased width for better spacing */
     background: transparent;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     margin: auto;
+    text-align: left; /* Align form text properly */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between elements */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
 }
 
 /* Input & Button Styles */
-input, button {
+input {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    background: transparent; /* Make input transparent */
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    font-size: 16px;
 }
+
 button {
-    background: blue;
+    width: 100%;
+    padding: 12px;
+    background: hsl(7, 71%, 60%);
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 16px;
 }
-
-button:hover {
-    background: darkblue;
-}
-
 /* Error Message */
 .error-message {
     color: red;
     font-size: 12px;
+    margin-top: -10px; /* Move closer to input */
 }
 
 /* Hide Elements */
 .hidden {
     display: none;
+}
+
+/* File Upload Styles */
+.file-upload {
+    position: relative;
+    width: 100%;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.file-upload:hover {
+    border-color: hsl(7, 71%, 60%);
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
