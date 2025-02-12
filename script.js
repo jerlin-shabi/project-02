@@ -45,28 +45,25 @@ document.addEventListener("DOMContentLoaded", function () {
         return regex.test(email);
     }
 
-    // Function to generate the ticket
     function generateTicket(name, email, github, avatar) {
         // Clear existing ticket content
         ticketContainer.innerHTML = `
             <div class="ticket">
-                <h2>Your Conference Ticket 🎟️</h2>
-                <img src="${avatar}" alt="Avatar" class="avatar">
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/${github}" target="_blank">${github}</a></p>
-                <button id="backBtn">Edit Details</button>
+                <div class="ticket-header">
+                    <img src="assests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
+                </div>
+                <p style="text-align:left;">Jan 31, 2025 / Shabi, TX</p>
+                <div class="ticket-content">
+                    <img src="${avatar}" alt="Avatar" class="avatar">
+                    <p><strong></strong> ${name}</p>
+                    <p><strong></strong> ${email}</p>
+                    <p><strong></strong> ${github}</p>
+                </div>
             </div>
         `;
 
         // Hide the form and show the ticket
         document.querySelector(".container").classList.add("hidden");
         ticketContainer.classList.remove("hidden");
-
-        // Add back button functionality
-        document.getElementById("backBtn").addEventListener("click", function () {
-            ticketContainer.classList.add("hidden");
-            document.querySelector(".container").classList.remove("hidden");
-        });
     }
 });

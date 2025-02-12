@@ -153,8 +153,8 @@ button {
 .ticket {
     position: relative;
     display: inline-block;
-    width: 500px; /* Adjust based on image size */
-    height: 250px;
+    width: 100%; /* Adjust based on image size */
+    height: 100%;
     background: url('assests/images/pattern-ticket.svg') no-repeat center center;
     background-size: cover;
     padding: 20px;
@@ -165,12 +165,12 @@ button {
 /* Avatar Styling */
 .ticket .avatar {
     position: absolute;
-    top: 90px;
+    top: 10em; /* Adjust based on image size */
     left: 30px;
-    width: 80px;
-    height: 80px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
     border-radius: 10%;
-    border: 2px solid white;
 }
 
 /* Name Styling */
@@ -200,6 +200,36 @@ button {
     font-size: 16px;
     color: white;
 }
+
+.ticket {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.ticket-header img {
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
+.ticket-logo {
+    width: 150px; /* Adjust as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.ticket-content {
+    padding: 10px;
+}
+
+
 
 
 
