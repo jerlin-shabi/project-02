@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inconsolata', monospace;
     text-align: center;
     color: hsl(252, 6%, 83%);
     padding: 20px;
@@ -48,7 +48,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     margin: auto;
-    text-align: left; /* Align form text properly */
+    text-align: center; /* Align form text properly */
 }
 
 /* Form Styling */
@@ -62,6 +62,7 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+    text-align: left; /* Align text to the left */
 }
 
 /* Input & Button Styles */
@@ -70,8 +71,9 @@ input {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    background: transparent; /* Slight transparency */
     font-size: 16px;
+    color: hsl(252, 6%, 83%);
 }
 
 button {
@@ -134,3 +136,74 @@ button {
     opacity: 0;
     cursor: pointer;
 }
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('assets/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* ExtraBold */
+    font-style: normal;
+}
+/* Ticket Container */
+.ticket-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ticket Wrapper */
+.ticket {
+    position: relative;
+    display: inline-block;
+    width: 500px; /* Adjust based on image size */
+    height: 250px;
+    background: url('assests/images/pattern-ticket.svg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar Styling */
+.ticket .avatar {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    border: 2px solid white;
+}
+
+/* Name Styling */
+.ticket .ticket-name {
+    position: absolute;
+    top: 40px;
+    left: 130px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Email Styling */
+.ticket .ticket-email {
+    position: absolute;
+    top: 80px;
+    left: 130px;
+    font-size: 16px;
+    color: white;
+}
+
+/* GitHub Username */
+.ticket .ticket-github {
+    position: absolute;
+    top: 120px;
+    left: 130px;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+
+
+
+
