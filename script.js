@@ -85,3 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 });
+
+ticketContainer.style.maxWidth = "90%";
+ticketContainer.style.width = "auto";
+ticketContainer.style.minHeight = "auto";

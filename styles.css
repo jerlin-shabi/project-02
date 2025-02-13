@@ -266,6 +266,58 @@ button {
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Make the form take up most of the screen */
+        padding: 20px;
+    }
+
+    .ticket {
+        width: 90%;
+        height: auto; /* Adjust height dynamically */
+        padding: 15px;
+    }
+
+    .ticket-content {
+        flex-direction: column; /* Stack elements on small screens */
+        align-items: center;
+        margin-left: 0;
+        margin-top: 4em;
+    }
+
+    .avatar {
+        width: 60px; /* Make avatar smaller */
+        height: 60px;
+    }
+
+    .bottom {
+        left: 50%;
+        transform: translateX(-50%); /* Center text below */
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    .github-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .github-username {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 500px;
+    }
+
+    .ticket {
+        max-width: 600px;
+    }
+}
+
 
 
 
