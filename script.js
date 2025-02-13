@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function generateTicket(name, email, github, avatar) {
         ticketContainer.innerHTML = `
             <div class="heading">
-                <h1>Congrats, ${name}!</h1>
+                <h1>Congrats,<span class="highlight">${name}!</span></h1>
                 <h1>Your ticket is ready.</h1>
             </div>
             <div class="sub-heading">
                 <p>We've emailed your ticket to</p>
-                <p>${email} and will send updates in</p>
+                <p><span class="highlight">${email}!</span>and will send updates in</p>
                 <p>the run-up to the event.</p>
             </div>
             <div class="ticket">

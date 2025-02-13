@@ -184,15 +184,25 @@ button {
     display: flex;
     flex-direction: row;
     margin-left: 6em; 
-    margin-top: 4em;/* Align elements in a row */
+    margin-top: 8em;/* Align elements in a row */
 }
 
 /* Ticket Header (Logo) */
 .ticket-header {
     display: flex;
     justify-content: left;
+    align-items: center;
     width: 100%;
     margin-bottom: 10px;
+}
+
+/* Logo Image - Set to Original Size */
+.ticket-logo {
+    width: auto;  /* Use actual image width */
+    height: auto; /* Use actual image height */
+    max-width: 300px; /* Set this to your original width */
+    max-height: 70px; /* Set this to your original height */
+    object-fit: contain; /* Keeps the aspect ratio */
 }
 
 /* Event Date */
@@ -250,6 +260,12 @@ button {
     left: 120px; /* Position to the right of the avatar */
     color: white;
 }
+
+.highlight {
+    color: hsl(7, 71%, 60%);
+    font-weight: bold;
+}
+
 
 
 
