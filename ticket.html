@@ -8,7 +8,11 @@
 </head>
 <body>
 
-
+    <div class="github-info">
+        <img src="assets/images/icon-github.svg" class="git-img" alt="GitHub Icon">
+        <p class="github-username">${github}</p>
+    </div>
+    
     <script>
         // Retrieve stored ticket details
         document.getElementById("ticket-name").textContent = localStorage.getItem("name");
@@ -22,5 +26,6 @@
             document.getElementById("ticket-avatar").style.display = "none";
         }
     </script>
+   
 </body>
 </html>

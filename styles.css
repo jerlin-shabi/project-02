@@ -147,6 +147,10 @@ button {
     opacity: 0;
     cursor: pointer;
 }
+.github-info{
+    display: flex;
+    flex-direction: column;
+}
 
 @font-face {
     font-family: 'Inconsolata';
@@ -156,116 +160,96 @@ button {
 }
 /* Ticket Container */
 .ticket-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
 /* Ticket Wrapper */
 .ticket {
     position: relative;
-    display: inline-block;
-    width: 100%; /* Adjust based on image size */
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    justify-content: center;
+    width: 600px; /* Fixed size for consistency */
+    height: 280px;
     background: url('assests/images/pattern-ticket.svg') no-repeat center center;
     background-size: cover;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.ticket-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6em; 
+    margin-top: 4em;/* Align elements in a row */
 }
 
-/* Avatar Styling */
-.ticket .avatar {
-    position: absolute;
-    top: 7em; /* Adjust based on image size */
-    left: 20px;
-    width: 80px;
+/* Ticket Header (Logo) */
+.ticket-header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Event Date */
+.shabi {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+/* Avatar Image */
+
+
+.avatar {
+    width: 80px; /* Adjust avatar size */
     height: 80px;
-    border-radius: 10%;
+    border-radius: 25px; /* Rounded corners */
+    position: absolute;
+    bottom: 20px; /* Position from the bottom */
+    left: 20px; /* Position from the left */
 }
 
 /* Name Styling */
-.ticket .ticket-name {
-    position: absolute;
-    top: 40px;
-    left: 130px;
+.name-ticket {
     font-size: 20px;
     font-weight: bold;
     color: white;
+    margin: 0;
 }
-
-/* Email Styling */
-.ticket .ticket-email {
-    position: absolute;
-    top: 80px;
-    left: 130px;
-    font-size: 16px;
-    color: white;
-}
-
-/* GitHub Username */
-.ticket .ticket-github {
-    position: absolute;
-    top: 120px;
-    left: 130px;
-    font-size: 16px;
-    color: white;
-}
-
-.ticket {
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.ticket-header {
+/* GitHub Info */
+.info {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-top: 5px;
 }
-
-.ticket-header img {
-    margin-left: 10px; /* Adjust spacing as needed */
+.info p{
+    margin: 0;
 }
-
-.ticket-logo {
-    width: 150px; /* Adjust as needed */
-    display: block;
-    margin: 0 auto;
-}
-
-.ticket-content {
-    padding: 10px;
-}
-
-.sub-heading {
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.shabi{
-    font-size: small;
-}
-.github-info {
-    display: flex;
-    align-items: center;  /* Align items vertically */
-    gap: 10px;  /* Space between icon and text */
-    position: absolute;
-    top: 120px; /* Adjust based on the avatar position */
-    left: 120px; /* Adjust based on the avatar position */
-}
-
 .git-img {
-    width: 20px; /* Adjust size as needed */
-    height: 24px;
-    
+    width: 20px;
+    height: 20px;
 }
 
 .github-username {
     font-size: 16px;
-    color: white; /* Adjust color if needed */
-    text-decoration: none;
+    color: white;
+    
 }
+
+.bottom {
+    display:flex;
+    position: absolute;
+    bottom: 20px; /* Align with avatar's bott;om */
+    left: 120px; /* Position to the right of the avatar */
+    color: white;
+}
+
 
 
