@@ -10,14 +10,16 @@ body {
     background-size: cover;
 }
 
-/* Background SVG Elements */
+
 .background-svg {
     position: absolute;
-    z-index: -1; /* Keep them behind content */
-    pointer-events: none; /* Prevent interaction */
+    z-index: -1; 
+
 }
 
-/* Positioning Each SVG */
+#logo-full{
+    margin-top: 20px;
+}
 .circle {
     top: 10px;
     left: 10px;
@@ -25,9 +27,12 @@ body {
 }
 
 .lines {
-    bottom: 10px;
-    right: 10px;
+    bottom: 0px;
+    right: 0px;
+    margin: 0px;
     width: 150px;
+    display: flex;
+    
 }
 
 .squiggly-top {
@@ -51,6 +56,11 @@ body {
     text-align: center; /* Align form text properly */
 }
 
+#conf{
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
 /* Form Styling */
 form {
     display: flex;
@@ -59,6 +69,7 @@ form {
 }
 
 label {
+    margin-top: 2px;
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
@@ -67,7 +78,6 @@ label {
 
 /* Input & Button Styles */
 input {
-    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -77,8 +87,7 @@ input {
 }
 
 button {
-    width: 100%;
-    padding: 12px;
+    padding: 20px;
     background: hsl(7, 71%, 60%);
     color: white;
     border: none;
@@ -101,7 +110,6 @@ button {
 /* File Upload Styles */
 .file-upload {
     position: relative;
-    width: 100%;
     border: 2px dashed #ccc;
     border-radius: 6px;
     padding: 20px;
@@ -110,6 +118,9 @@ button {
     transition: border-color 0.3s;
 }
 
+#file{
+    font-size: 14px;
+}
 .file-upload:hover {
     border-color: hsl(7, 71%, 60%);
 }
@@ -128,7 +139,7 @@ button {
 }
 
 .file-upload-input {
-    position: absolute;
+
     top: 0;
     left: 0;
     width: 100%;
@@ -165,11 +176,10 @@ button {
 /* Avatar Styling */
 .ticket .avatar {
     position: absolute;
-    top: 10em; /* Adjust based on image size */
-    left: 30px;
-    left: 30px;
-    width: 100px;
-    height: 100px;
+    top: 7em; /* Adjust based on image size */
+    left: 20px;
+    width: 80px;
+    height: 80px;
     border-radius: 10%;
 }
 
@@ -229,11 +239,33 @@ button {
     padding: 10px;
 }
 
+.sub-heading {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
 
+.shabi{
+    font-size: small;
+}
+.github-info {
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    gap: 10px;  /* Space between icon and text */
+    position: absolute;
+    top: 120px; /* Adjust based on the avatar position */
+    left: 120px; /* Adjust based on the avatar position */
+}
 
+.git-img {
+    width: 20px; /* Adjust size as needed */
+    height: 24px;
+    
+}
 
-
-
-
+.github-username {
+    font-size: 16px;
+    color: white; /* Adjust color if needed */
+    text-decoration: none;
+}
 
 
