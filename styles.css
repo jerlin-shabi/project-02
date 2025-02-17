@@ -4,7 +4,6 @@ body {
     color: hsl(252, 6%, 83%);
     padding: 20px;
     position: relative;
-    overflow: hidden; /* Prevents elements from overflowing */
     min-height: 100vh;
     background: url('assests/images/background-desktop.png') no-repeat center center fixed;
     background-size: cover;
@@ -17,8 +16,13 @@ body {
 
 }
 
-#logo-full{
-    margin-top: 20px;
+#secure-content{
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.logo-full{
+    margin-bottom: 10px;
 }
 .circle {
     top: 10px;
@@ -48,13 +52,88 @@ body {
 
 /* Main Content Container */
 .container {
-    max-width: 450px;  /* Increased width for better spacing */
+    max-width: 450px;
     background: transparent;
     padding: 30px;
     border-radius: 8px;
     margin: auto;
-    text-align: center; /* Align form text properly */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
+
+/* Fading Effect on Left & Right */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%; /* Controls the fade width */
+    height: 100%;
+    
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.container::before {
+    left: 0;
+}
+
+.container::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+/* Continuous Reveal Animation */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Fading Shine Effect */
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+
+}
+
+/* Smooth Infinite Light Sweep */
+@keyframes shineEffect {
+    0% {
+        left: -150%;
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
 
 #conf{
     font-size: 15px;
@@ -69,32 +148,96 @@ form {
 }
 
 label {
-    margin-top: 2px;
     font-weight: bold;
-    margin-bottom: 5px;
     display: block;
     text-align: left; /* Align text to the left */
 }
 
-/* Input & Button Styles */
-input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: transparent; /* Slight transparency */
-    font-size: 16px;
-    color: hsl(252, 6%, 83%);
+.info-icon{
+    display: flex;
+    align-items: center;
+
 }
 
+.info-icon h3{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+
+}
+/* Input & Button Styles */
 button {
-    padding: 20px;
-    background: hsl(7, 71%, 60%);
+    padding: 20px 40px;
+    background: linear-gradient(180deg, hsl(7, 71%, 60%) 0%, hsl(7, 71%, 50%) 100%);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+
 }
+
+/* Glossy Reflection Effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Hover Effect: Smooth Color Shift & Shadow Glow */
+button:hover {
+    background: linear-gradient(45deg, hsl(7, 71%, 60%), hsl(44, 100%, 50%), hsl(160, 100%, 50%));
+    background-size: 300%;
+    animation: colorShift 1.5s ease-in-out infinite;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 200, 0, 0.6);
+}
+
+/* Continuous Gradient Animation */
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Fog Effect */
+button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+    animation: fogMove 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes fogMove {
+    0% { transform: translateX(-10%) translateY(-10%) scale(1); }
+    50% { transform: translateX(10%) translateY(10%) scale(1.1); }
+    100% { transform: translateX(-10%) translateY(-10%) scale(1); }
+}
+
+/* Blinking Effect on Click */
+button:active {
+    animation: blinkEffect 0.3s ease-in-out 3;
+}
+
+@keyframes blinkEffect {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
 /* Error Message */
 .error-message {
     color: red;
@@ -111,18 +254,26 @@ button {
 .file-upload {
     position: relative;
     border: 2px dashed #ccc;
-    border-radius: 6px;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border-radius: 10px;
+    width: 100%;
+    height: 120px;
     text-align: center;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, border-width 0.3s, transform 0.3s;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;  
 }
 
+.file-upload:hover {
+    transform: scale(1.05);
+    border-color: #e94f4f;
+    border-width: 3px;
+}
 #file{
     font-size: 14px;
-}
-.file-upload:hover {
-    border-color: hsl(7, 71%, 60%);
+    height: 100%;
 }
 
 .file-upload-label {
@@ -130,22 +281,37 @@ button {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    height: 100%;
 }
 
 .upload-icon {
     width: 50px;
-    height: 50px;
+    height: 100%;
     margin-bottom: 10px;
+    padding-top: 20px;
 }
 
 .file-upload-input {
 
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 100px;
     opacity: 0;
-    cursor: pointer;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    font-size: 16px;
+    color: hsl(252, 6%, 83%);
+}
+
+::placeholder{
+    font-family: 'Inconsolata', monospace;
+
+
 }
 .github-info{
     display: flex;
@@ -154,7 +320,7 @@ button {
 
 @font-face {
     font-family: 'Inconsolata';
-    src: url('assets/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
+    src: url('asests/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
     font-weight: 800; /* ExtraBold */
     font-style: normal;
 }
@@ -167,6 +333,33 @@ button {
     padding: 20px;
 }
 
+.heading{
+    width: 2000px;
+}
+
+.heading h1{
+    font-size: 60px;
+    color: white;
+    margin-top: 20px;
+}
+
+.heading h2{
+    font-size: 40px;
+    color: white;
+}
+
+#email-name{
+    font-size: 20px;
+    color: rgb(231, 128, 128);
+    margin-top: 20px;
+}
+
+#email-content{
+    font-size: 15px;
+    color: white;
+    margin-top: 20px;
+}
+
 /* Ticket Wrapper */
 .ticket {
     position: relative;
@@ -176,41 +369,41 @@ button {
     justify-content: center;
     width: 600px; /* Fixed size for consistency */
     height: 280px;
-    background: url('assests/images/pattern-ticket.svg') no-repeat center center;
-    background-size: cover;
-    padding: 20px;
+    background: url('asests/images/pattern-ticket.svg') no-repeat center center;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    /*background-size: cover;
+    padding: 20px;*/
 }
+
+.ticket-logo{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 .ticket-content {
     display: flex;
     flex-direction: row;
     margin-left: 6em; 
-    margin-top: 8em;/* Align elements in a row */
+    margin-top: 4em;/* Align elements in a row */
 }
 
 /* Ticket Header (Logo) */
 .ticket-header {
     display: flex;
     justify-content: left;
-    align-items: center;
     width: 100%;
     margin-bottom: 10px;
 }
 
-/* Logo Image - Set to Original Size */
-.ticket-logo {
-    width: auto;  /* Use actual image width */
-    height: auto; /* Use actual image height */
-    max-width: 300px; /* Set this to your original width */
-    max-height: 70px; /* Set this to your original height */
-    object-fit: contain; /* Keeps the aspect ratio */
-}
-
 /* Event Date */
-.shabi {
+.Date {
     font-size: 14px;
     font-weight: bold;
     color: white;
     text-align: left;
+    margin-left: 20px;
 }
 
 /* Avatar Image */
@@ -225,6 +418,11 @@ button {
     left: 20px; /* Position from the left */
 }
 
+.github-info{
+    margin-left: 20px;
+    
+}
+
 /* Name Styling */
 .name-ticket {
     font-size: 20px;
@@ -232,6 +430,14 @@ button {
     color: white;
     margin: 0;
 }
+
+#ticket-nameing{
+    background: linear-gradient(90deg, #FF6A3D, #fffefd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* GitHub Info */
 .info {
     display: flex;
@@ -249,9 +455,29 @@ button {
 
 .github-username {
     font-size: 16px;
-    color: white;
+    background: linear-gradient(90deg, #FF6A3D, #FF9A8B);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
     
 }
+.ticket-number {
+    height: 200px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+}
+
+#ticketnumber {
+    font-size: 14px;
+    font-size: larger;
+    color: rgb(136, 132, 132);
+    transform: rotate(90deg);
+}
+
 
 .bottom {
     display:flex;
@@ -261,62 +487,16 @@ button {
     color: white;
 }
 
-.highlight {
-    color: hsl(7, 71%, 60%);
-    font-weight: bold;
+ .bottom-print{
+   margin-top: 10px;   
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        max-width: 90%; /* Make the form take up most of the screen */
-        padding: 20px;
-    }
-
-    .ticket {
-        width: 90%;
-        height: auto; /* Adjust height dynamically */
-        padding: 15px;
-    }
-
-    .ticket-content {
-        flex-direction: column; /* Stack elements on small screens */
-        align-items: center;
-        margin-left: 0;
-        margin-top: 4em;
-    }
-
-    .avatar {
-        width: 60px; /* Make avatar smaller */
-        height: 60px;
-    }
-
-    .bottom {
-        left: 50%;
-        transform: translateX(-50%); /* Center text below */
-    }
-
-    h1 {
-        font-size: 22px; /* Adjust heading size */
-    }
-
-    .github-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .github-username {
-        font-size: 14px;
-    }
+.bottom-print button{
+    padding: 10px;
+    background: hsl(7, 71%, 60%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
 }
-@media screen and (min-width: 1024px) {
-    .container {
-        max-width: 500px;
-    }
-
-    .ticket {
-        max-width: 600px;
-    }
-}
-
-
-
